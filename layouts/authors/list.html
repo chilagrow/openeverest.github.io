@@ -1,0 +1,38 @@
+
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="container mx-auto px-4 py-16">
+    <header class="mb-12">
+        <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+        {{ if .Params.description }}
+        <p class="text-xl text-gray-600">{{ .Params.description }}</p>
+        {{ end }}
+    </header>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <div class="flex items-start gap-4">
+                {{ if .Params.avatar }}
+                <img src="{{ .RelPermalink }}{{ .Params.avatar }}" alt="{{ .Title }}" class="w-20 h-20 rounded-full object-cover">
+                {{ end }}
+                <div>
+                    <h2 class="text-xl font-semibold mb-2">
+                        <a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a>
+                    </h2>
+                    {{ if .Params.github }}
+                    <a href="https://github.com/{{ .Params.github }}" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 hover:underline">
+                        @{{ .Params.github }}
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ if .Params.bio }}
+            <p class="text-gray-700 mt-4">{{ .Params.bio }}</p>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

@@ -30,7 +30,17 @@
                 <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
                 {{ if .Params.authors }}
                 <span class="mx-2">•</span>
-                <span>{{ delimit .Params.authors ", " }}</span>
+                <span>
+                    {{ range $index, $author := .Params.authors }}
+                        {{ if $index }}, {{ end }}
+                        {{ $authorPage := $.Site.GetPage (printf "/authors/%s" ($author | urlize)) }}
+                        {{ if $authorPage }}
+                            <a href="{{ $authorPage.Permalink }}" class="text-blue-600 hover:underline">{{ $author }}</a>
+                        {{ else }}
+                            {{ $author }}
+                        {{ end }}
+                    {{ end }}
+                </span>
                 {{ end }}
             </div>
             {{ if .Params.summary }}

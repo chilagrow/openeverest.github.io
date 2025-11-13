@@ -1,4 +1,3 @@
-
 # Contributing a Blog Post
 
 Thank you for your interest in contributing to the Everest blog! We welcome posts from the community about database management, Kubernetes, DevOps, tutorials, and experiences using Everest.
@@ -12,7 +11,34 @@ To contribute a blog post:
 3. **Submit a pull request** with your changes
 4. **Wait for review** - our team will review and provide feedback
 
-## Blog Post Structure
+## Before You Write a Blog
+
+First, add yourself to the list of authors:
+
+```bash
+hugo new authors/$your_github_handle
+```
+
+This will create a folder at `content/authors/$your_github_handle/` with:
+- `index.md` - Your author profile
+- `avatar.png` - A placeholder avatar image
+
+Edit `content/authors/$your_github_handle/index.md` to add your information:
+
+```yaml
+---
+title: "Your Full Name"
+github: "your_github_handle"
+bio: "A brief description about yourself"
+avatar: "avatar.png"
+---
+
+Optional extended bio in Markdown format...
+```
+
+Replace the `avatar.png` with your own image (keep the same filename or update the frontmatter).
+
+## Creating a New Blog Post
 
 Each blog post **must** be in its own folder (page bundle) with an `index.md` file. This allows you to store images and other assets alongside your post.
 
