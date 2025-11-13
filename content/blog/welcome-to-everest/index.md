@@ -1,7 +1,7 @@
 
 ---
 title: "Welcome to Everest"
-date: 2025-01-15T10:00:00
+date: 2025-11-01T10:00:00
 draft: false
 image:
     url: 
