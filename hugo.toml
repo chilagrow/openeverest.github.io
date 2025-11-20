@@ -1,10 +1,10 @@
 baseURL = 'https://openeverest.io/'
 languageCode = 'en-us'
-title = 'Everest Open Source'
+title = 'OpenEverest'
 
 [params]
-  description = 'Website for Everest Open Source project'
-  author = 'Everest Team'
+  description = 'Website for OpenEverest project'
+  author = 'OpenEverest Team'
 
 [build]
   writeStats = true

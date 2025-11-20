@@ -1,7 +1,7 @@
-# Everest Open Source Website
+# OpenEverest Website
 
 ## Overview
-This is the official website for the Everest Open Source project, built with Hugo static site generator, Node.js, and Tailwind CSS. The site is configured to be hosted on GitHub Pages (github.io).
+This is the official website for the OpenEverest project, built with Hugo static site generator, Node.js, and Tailwind CSS. The site is configured to be hosted on GitHub Pages (github.io).
 
 ## Project Structure
 

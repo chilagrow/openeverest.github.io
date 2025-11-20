@@ -1,6 +1,6 @@
 
 ---
-title: "Welcome to Everest"
+title: "Welcome to OpenEverest"
 date: 2025-11-01T10:00:00
 draft: false
 image:
@@ -10,14 +10,14 @@ authors:
  - spron-in
 tags:
  - announcement
-summary: Welcome to Everest - the open-source platform for automated database provisioning and management. Learn about our mission and how to contribute.
+summary: Welcome to OpenEverest - the open-source platform for automated database provisioning and management. Learn about our mission and how to contribute.
 ---
 
-Welcome to **Everest** - the first open-source platform for automated database provisioning and management!
+Welcome to **OpenEverest** - the first open-source platform for automated database provisioning and management!
 
 ## Our Mission
 
-At Everest, we believe in the power of open-source collaboration to build exceptional database platforms. Our goal is to foster a vibrant community of contributors who share our vision of creating a world-class database management solution that's:
+At OpenEverest, we believe in the power of open-source collaboration to build exceptional database platforms. Our goal is to foster a vibrant community of contributors who share our vision of creating a world-class database management solution that's:
 
 - **Open and Transparent**: Built in the open, by the community, for the community
 - **Vendor-Neutral**: Deploy on any Kubernetes infrastructure without lock-in
@@ -37,6 +37,6 @@ Our team will review your submission and work with you to get it published.
 
 ## Join Us
 
-Whether you're a database administrator, developer, or DevOps engineer, there's a place for you in the Everest community. Together, we're building the future of database management.
+Whether you're a database administrator, developer, or DevOps engineer, there's a place for you in the OpenEverest community. Together, we're building the future of database management.
 
 Get started today at [docs.percona.com/everest](https://docs.percona.com/everest/)

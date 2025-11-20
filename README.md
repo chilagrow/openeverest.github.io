@@ -1,7 +1,7 @@
 
 # OpenEverest Website
 
-This is the official website for [openeverest.io](https://openeverest.io) - the Everest open source project. Everest is the first open-source platform for automated database provisioning and management.
+This is the official website for [openeverest.io](https://openeverest.io) - the OpenEverest project. OpenEverest is the first open-source platform for automated database provisioning and management.
 
 ## Technologies
 
