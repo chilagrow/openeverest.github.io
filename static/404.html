@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QWKGQSNZZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0QWKGQSNZZ');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | OpenEverest</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'everest-blue': '#127be8',
+                        'everest-dark': '#161641',
+                        'everest-light': '#7790DE',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        .query-line {
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Left Side - Message -->
+        <div class="flex-1 flex items-center justify-center p-8 bg-white">
+            <div class="max-w-md text-center md:text-left">
+                <a href="/" class="inline-block mb-8">
+                    <img src="/images/everest-black-full-color-min.png" alt="OpenEverest" class="h-12">
+                </a>
+                <h1 class="text-8xl font-bold text-everest-blue mb-4">404</h1>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Page Not Found</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Looks like this page doesn't exist in our database cluster. 
+                    The route you're looking for might have been moved, deleted, or never existed.
+                </p>
+                <div class="space-y-4">
+                    <a href="/" class="inline-block bg-everest-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-everest-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Return to Homepage
+                    </a>
+                    <div class="text-sm text-gray-500 mt-6">
+                        <p>Or explore:</p>
+                        <div class="flex flex-wrap gap-3 mt-3 justify-center md:justify-start">
+                            <a href="/blog" class="text-everest-light hover:text-everest-blue transition-colors">Blog</a>
+                            <span class="text-gray-300">•</span>
+                            <a href="https://docs.percona.com/everest/" target="_blank" class="text-everest-light hover:text-everest-blue transition-colors">Documentation</a>
+                            <span class="text-gray-300">•</span>
+                            <a href="/support" class="text-everest-light hover:text-everest-blue transition-colors">Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Database Query Animation -->
+        <div class="flex-1 bg-everest-dark text-white p-8 flex items-center justify-center">
+            <div class="w-full max-w-2xl">
+                <div class="bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
+                    <!-- Terminal Header -->
+                    <div class="bg-gray-800 px-4 py-3 flex items-center gap-2 border-b border-gray-700">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <span class="text-gray-400 text-sm ml-4 font-mono">everest-query-terminal</span>
+                    </div>
+                    
+                    <!-- Terminal Content -->
+                    <div class="p-6 font-mono text-sm" id="terminal">
+                        <div class="text-green-400 mb-4">everest@cluster:~$<span class="cursor">_</span></div>
+                    </div>
+                </div>
+                
+                <p class="text-gray-400 text-xs mt-4 text-center">
+                    Simulating database query execution...
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const terminal = document.getElementById('terminal');
+        const queries = [
+            { text: 'SELECT * FROM pages WHERE route = \'/{{ window.location.pathname }}\';', delay: 500 },
+            { text: '', delay: 800 },
+            { text: 'Executing query on primary node...', delay: 1000, color: 'text-blue-400' },
+            { text: 'Checking replica set...', delay: 600, color: 'text-blue-400' },
+            { text: 'Scanning indexes...', delay: 700, color: 'text-blue-400' },
+            { text: '', delay: 500 },
+            { text: 'Query executed successfully.', delay: 800, color: 'text-green-400' },
+            { text: '', delay: 300 },
+            { text: '┌─────────────────────────────────────────┐', delay: 100, color: 'text-gray-500' },
+            { text: '│  Result Set                             │', delay: 100, color: 'text-gray-500' },
+            { text: '├─────────────────────────────────────────┤', delay: 100, color: 'text-gray-500' },
+            { text: '│  Rows returned: 0                       │', delay: 100, color: 'text-yellow-400' },
+            { text: '│  Status: NOT_FOUND                      │', delay: 100, color: 'text-red-400' },
+            { text: '└─────────────────────────────────────────┘', delay: 100, color: 'text-gray-500' },
+            { text: '', delay: 500 },
+            { text: 'ERROR: Page not found in database cluster.', delay: 500, color: 'text-red-400 font-bold' },
+            { text: '', delay: 300 },
+            { text: 'everest@cluster:~$<span class="cursor">_</span>', delay: 0, color: 'text-green-400', html: true }
+        ];
+
+        let currentLine = 0;
+
+        function addLine(text, color = 'text-white', isHtml = false) {
+            const line = document.createElement('div');
+            line.className = `query-line ${color} mb-1`;
+            if (isHtml) {
+                line.innerHTML = text;
+            } else {
+                line.textContent = text;
+            }
+            terminal.appendChild(line);
+        }
+
+        function runQuery() {
+            if (currentLine < queries.length) {
+                const query = queries[currentLine];
+                setTimeout(() => {
+                    addLine(query.text, query.color || 'text-white', query.html || false);
+                    currentLine++;
+                    runQuery();
+                }, query.delay);
+            }
+        }
+
+        // Start animation after page load
+        setTimeout(runQuery, 1000);
+    </script>
+</body>
+</html>
