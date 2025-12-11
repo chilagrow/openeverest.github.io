@@ -78,8 +78,8 @@ OpenEverest uses [Helm charts](https://github.com/percona/percona-helm-charts) t
 # How it all works together
 
 OpenEverest's components are designed to work together to provide a unified database management experience on Kubernetes:
-1. **User interaction:** Users interacts with OpenEverest through the web-based UI, while CLI is used for administrative tasks.
-2. **API Server:** UI communicate with the OpenEverest API Server, which acts as the central hub for database management operations.
+1. **User interaction:** Users interact with OpenEverest through the web-based UI, while CLI is used for administrative tasks.
+2. **API Server:** UI communicates with the OpenEverest API Server, which acts as the central hub for database management operations.
 3. **OpenEverest Operator:** The API Server delegates database lifecycle operations (such as provisioning, scaling, and backups) to the OpenEverest Operator.
 4. **Database Operators:** The OpenEverest Operator, in turn, manages specific database operators (e.g., for PostgreSQL, MongoDB, MySQL) using Kubernetes custom resources.
 5. **Helm charts:** Helm charts are used to deploy and upgrade OpenEverest components themselves, making installation and maintenance straightforward.
