@@ -16,6 +16,19 @@ summary: This guide walks you through main components that make up OpenEverest a
 
 OpenEverest is a cloud-native database platform that simplifies database provisioning and management on Kubernetes. It provides a unified interface for managing databases, including PostgreSQL, MySQL, and MongoDB.
 
+# User Flow
+
+OpenEverest allows users to deploy and manage databases on Kubernetes. When a user creates a database, the web UI collects configuration, submits a request, and OpenEverest handles the rest. This section shows the high-level user-facing flow before we look under the hood.
+
+High-level database creation flow:
+1. User fills the form in the web UI to request a new database.
+2. The request is sent to the OpenEverest API Server.
+3. OpenEverest API Server delegates lifecycle tasks to the OpenEverest Operator.
+4. OpenEverest Operator creates Kubernetes custom resources; underlying database operators reconcile and create pods, storage, backups, etc.
+5. User sees the created database and status in the web UI.
+
+![User flow diagram](openeverest-user-flow.png)
+
 # Components of OpenEverest
 
 OpenEverest consists of several key components that work together to provide a powerful experience for users. Read on to learn about each component and how they interact.
