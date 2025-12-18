@@ -47,10 +47,10 @@ The OpenEverest API Server is the central component that exposes a RESTful API f
 
 ## OpenEverest CLI
 
-The OpenEverest CLI is used to perform Kubernetes administrative tasks such as user account management, RBAC, and namespace management. It also provisions and upgrades OpenEverest.
+The OpenEverest CLI is used to perform administrative tasks such as user account management, RBAC, and namespace management. It also provisions and upgrades OpenEverest.
 
 ```bash
-$ bin/everestctl
+$ everestctl
 CLI for managing Percona Everest
 
 Usage:
@@ -78,9 +78,9 @@ Use "everestctl [command] --help" for more information about a command.
 
 ## OpenEverest Operator
 
-The [OpenEverest Operator](https://github.com/percona/everest-operator) is a Kubernetes operator that manages database deployments and operations. OpenEverest delegates to individual Kubernetes database operators [percona-xtradb-cluster-operator](https://github.com/percona/percona-xtradb-cluster-operator), [percona-server-mongodb-operator](https://github.com/percona/percona-server-mongodb-operator), and [percona-postgresql-operator](https://github.com/percona/percona-postgresql-operator) for managing their databases. The operator pattern abstracts complexity by introducing specific custom resources.
-
-For example, for PostgreSQL, there may be three custom resources: one for the PostgreSQL cluster (describing scaling and configuration), one for backups, and one for restores. The OpenEverest Operator allows users to use a single schema to deploy different databases. An example of the OpenEverest Operator flow for PostgreSQL is shown below.
+The [OpenEverest Operator](https://github.com/percona/everest-operator) streamlines deployments by introducing a generic interface that works across different database technologies. Users define their requirements using the DatabaseCluster, DatabaseClusterBackup, and DatabaseClusterRestore resources, regardless of whether they are deploying MySQL, MongoDB, or PostgreSQL.
+	
+Behind the scenes, OpenEverest translates these generic requests into the specific formats required by the individual Kubernetes database operators: [percona-xtradb-cluster-operator](https://github.com/percona/percona-xtradb-cluster-operator), [percona-server-mongodb-operator](https://github.com/percona/percona-server-mongodb-operator), and [percona-postgresql-operator](https://github.com/percona/percona-postgresql-operator). This pattern allows users to master one set of CRDs while the operator manages the complexity of the specific engines. An example of the OpenEverest Operator flow for PostgreSQL is shown below.
 
 ![OpenEverest Operator](openeverest-operator.png)
 
