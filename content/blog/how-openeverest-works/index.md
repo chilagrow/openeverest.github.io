@@ -1,7 +1,7 @@
 ---
 title: "How OpenEverest works"
-date: 2025-12-15T12:00:00
-draft: true
+date: 2025-12-23T12:00:00
+draft: false
 image:
     url: blog-how-openeverest-works-cover.jpg
     attribution: https://unsplash.com/photos/a-piece-of-a-puzzle-with-a-missing-piece-cWMhxNmQVq0
